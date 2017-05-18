@@ -1,0 +1,35 @@
+<!-- Page content -->
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3 text-black">Customer</h1>
+        <small class="text-muted">Create new Customer Details</small>
+    </div>
+     
+<ul class="breadcrumb bg-white b-a">
+  <li><a ui-sref="customer">
+  <i class="fa fa-road icon text-info-dker"></i> Customer</a></li>
+  <li>Create New Customer</li>
+</ul>
+    <div class="wrapper-md" ng-init="initCreateCustomer()">
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        <form name="customerForm" action="#" ng-submit = "addcustomer()" method="post" enctype="multipart/form-data" class="form-horizontal form-validation" onsubmit="return false;">
+
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">
+                Create New Customer
+            </div>
+            <div class="panel-body">
+                  <div ng-include='"app/customer/form.html"'></div>
+            </div>
+              
+          <footer class="panel-footer text-right bg-light lter">
+              <button type="submit" class="btn btn-success" ng-disabled="customerForm.$invalid"> 
+              <i class="fa fa-save"></i> Submit</button>
+               <button type="reset" class="btn btn-warning">
+                <i class="fa fa-repeat"></i> Reset</button>
+            </footer>    
+        </div>
+        </form>
+    </div>    
+       <!-- END Page Content -->

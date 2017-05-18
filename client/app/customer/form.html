@@ -1,0 +1,100 @@
+<div class="form-group" ng-class="{'has-error':customerForm.name.$invalid && !customerForm.				name.$pristine }">
+	<label class="col-sm-2 control-label" for="name">Name 
+		<span style="color: red">*</span></label>
+	<div class="col-sm-10">
+	 	<input type="text" ng-model="customer.name" id="name" name="name"
+		class="form-control" placeholder="Name" ng-minlength="6" ng-maxlength="15" required>
+		<p ng-show="customerForm.name.$invalid && !customerForm.name.$pristine" 
+		class="help-block  m-b-none">Name is required.</p>
+
+		<p ng-show="customerForm.name.$error.minlength"class="help-block">Name is min 6 chars.</p>
+
+		<p ng-show="customerForm.name.$error.maxlength"class="help-block">Name is max 15 chars.</p>
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+<div class="form-group">
+	<br><label class="col-sm-2 control-label" for="username">User Name 
+		</label>
+	<div class="col-sm-10">
+	 	<input type="text" ng-model="customer.username" id="username" name="username"
+		class="form-control" placeholder="User name">
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+<div class="form-group">
+	<br><label class="col-sm-2 control-label" for="email">Email
+		</label>
+	<div class="col-sm-10">
+	 	<input type="email" ng-model="customer.email" id="email" name="email"
+		class="form-control" placeholder="Email">
+		
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+<div class="form-group">
+	<br><label class="col-sm-2 control-label" for="username">Phone
+		</label>
+	<div class="col-sm-10">
+	 	<input type="number" ng-model="customer.phone" id="email" name="phone"
+		class="form-control" placeholder="phone Number (Only Numbers Not Chart)" min="0" length="10">
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+<div class="form-group">
+	<br><label class="col-sm-2 control-label" for="username">City
+		</label>
+	<div class="col-sm-10">
+	 	<input type="text" ng-model="customer.city" id="email" name="city"
+		class="form-control" placeholder="City">
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+
+<div class="form-group">
+	<br><label class="col-sm-2 control-label" for="username">Gender
+	<span style="color: red">*</span>
+		</label>
+	<div class="col-sm-10">
+		<div class="col-md-6 col-xs-6">
+	 	 <input  type="radio" class="col-md-1" ng-model="customer.gender" value="M" ng-required="!customer.gender">  Male 
+	 	 </div>
+	 	 <div class="col-md-6 col-xs-6">
+ 		 <input type="radio" class="col-md-1" ng-model="customer.gender" value="F" ng-required="!customer.gender"> Fe-Male 
+ 		 </div>
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+<div class="form-group" ng-class="{'has-error':customerForm.password.$invalid && !customerForm.				password.$pristine }">
+	<br><label class="col-sm-2 control-label" for="password">password
+	<span style="color: red">*</span>
+		</label>
+	<div class="col-sm-10">
+		<input type="password" ng-model="customer.password" id="password"
+			name="password" class="form-control"
+			placeholder="password" ng-minlength="6" ng-maxlength="15" required/>
+			<p ng-show="customerForm.password.$invalid && !customerForm.password.$pristine && customerForm.password.$error.required"class="help-block">password is required.</p>
+			
+			<p ng-show="customerForm.password.$error.minlength"class="help-block">password is min 6 chars.</p>
+
+			<p ng-show="customerForm.password.$error.maxlength"class="help-block">password is max 15 chars.</p>
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>
+
+
+<div class="form-group">
+	<br><label class="col-sm-2 control-label" for="username">Address
+		</label>
+	<div class="col-sm-10">
+	 	<textarea type="text" ng-model="customer.address" id="address" name="address"
+		class="form-control" placeholder="Address" style="resize: none"></textarea>
+	</div>
+</div>
+<div class="line line-dashed b-b line-lg pull-in ng-scope"></div>

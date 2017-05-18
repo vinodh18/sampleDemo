@@ -1,0 +1,71 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Customers</h1>
+  <small class="text-muted">Manage Customers</small>
+</div>
+<div ng-init="initCustomer()">
+<ul class="breadcrumb bg-white b-a">
+	<li>Customers: {{total}}</li>
+</ul>
+
+
+<div class="container">
+<a ui-sref="^.create" class="btn btn-sm btn-primary">
+      <i class="fa fa-plus space-6"></i> Create</a>
+
+   <div class="panel-body">   
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    
+      <div class="row">
+      <div ng-repeat="customer in customer">
+        <div class="col-md-4 col-sm-6 col-xs-12 second_box">
+          <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="clearfix text-center m-t">
+          		<i class="glyphicon glyphicon-trash pull-right" ng-click="deleteCustomer(customer._id, row)"></i>
+          		<i class="glyphicon glyphicon-pencil pull-right" ui-sref="^.edit({customerId: customer._id})"></i>
+
+            <div class="inline">
+              
+                <div class="thumb-xl">
+                  <img alt="..." class="img-circle" src="../../assets/images/a8.jpg" title="" />
+                </div>
+             
+              <div class="h4 m-t m-b-xs">{{customer.name}}</div>
+              <small class="text-muted m-b">{{customer.username}}</small>
+            </div>                      
+          </div>
+        </div>
+        <footer class="panel-footer bg-info text-center no-padder">
+          <div class="row no-gutter">
+            <div class="col-xs-4">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">{{customer.phone}}</span>
+                <small class="text-muted">Phone</small>
+              </div>
+            </div>
+            <div class="col-xs-4 dk">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">{{customer.city}}</span>
+                <small class="text-muted">Chennai</small>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">2,035</span>
+                <small class="text-muted">Tweets</small>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
